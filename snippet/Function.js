@@ -1,3 +1,4 @@
+var _this = this;
 var run2 = function (name, seq, age) {
     if (seq === void 0) { seq = 2; }
     console.log(name + " \u82B3\u9F84 " + age + " \u5BB6\u91CC\u6392\u884C\u8001" + seq);
@@ -14,7 +15,7 @@ var foo = function (a) {
     return p + a;
 };
 console.log(foo(1, 2, 3, 4));
-function printParam(p) {
+function printParam(p, age) {
     if (typeof p === 'string') {
         console.log('it is a string');
     }
@@ -24,7 +25,15 @@ function printParam(p) {
     else {
         console.log(typeof p);
     }
+    if (age) {
+        console.log(age);
+    }
 }
 printParam('shut up');
+printParam('shut up', 6.66);
 printParam(666);
 // printParam(true)
+setTimeout(function () {
+    console.log('this 指向上下文');
+    _this.run2('芳芳');
+}, 3000);

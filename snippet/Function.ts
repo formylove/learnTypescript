@@ -17,7 +17,8 @@ console.log(foo(1, 2, 3, 4));
 
 function printParam(p:number):void;
 function printParam(p:string):void;
-function printParam(p:any):void{
+function printParam(p:string,foo:number):void;
+function printParam(p:any,age?:number):void{
 
 if (typeof p === 'string') {
     console.log('it is a string');
@@ -29,9 +30,20 @@ if (typeof p === 'string') {
     console.log(typeof p);
     
 }
+if (age) {
+    console.log(age);
+}
 
 }
 
 printParam('shut up')
+printParam('shut up',6.66)
 printParam(666)
 // printParam(true)
+
+setTimeout(()=>{
+console.log('this 指向上下文');
+this.run2('芳芳')
+
+
+},3000)
