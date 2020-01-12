@@ -1,4 +1,4 @@
-var flag:boolean=true//?????
+ var flag:boolean=true//?????
 
 // flag=123 报错
 
@@ -7,7 +7,8 @@ flag=false
 console.info(flag)
 
 
-var arr:Array<Number>=[1,2,3]
+
+export var arr:Array<Number>=[1,2,3]
 
 console.info(arr)
 //??arr????????
@@ -28,6 +29,7 @@ enum Flag{
 
 var flag2:Flag=Flag.SUCCESS
 console.error(flag2==Flag.SUCCESS)
+console.error(flag2 == 'You tell me')//true
 console.error(flag2);
 console.error(Flag.ERROR);
 console.error(Flag.SUCCESS);
@@ -47,6 +49,7 @@ n=666
 console.info(n)
 
 var s:null |number
+// console.info('s:null |number ?????',s) ??????s??
 s=888
 s=null
 // s=undefined ??
@@ -59,4 +62,8 @@ function run():void{
 run()
 
 var b:never
-b=(()=>{throw new Error('that an error')})()
+// b=(()=>{throw new Error('that an error')})()
+
+
+ var func=()=>console.info('export successfully')
+ export{func,flag}

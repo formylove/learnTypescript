@@ -1,6 +1,9 @@
+"use strict";
+exports.__esModule = true;
 var flag = true; //?????
+exports.flag = flag;
 // flag=123 报错
-flag = false;
+exports.flag = flag = false;
 console.info(flag);
 var arr = [1, 2, 3];
 console.info(arr);
@@ -19,6 +22,7 @@ var Flag;
 })(Flag || (Flag = {}));
 var flag2 = Flag.SUCCESS;
 console.error(flag2 == Flag.SUCCESS);
+console.error(flag2 == 'You tell me'); //true
 console.error(flag2);
 console.error(Flag.ERROR);
 console.error(Flag.SUCCESS);
@@ -33,6 +37,7 @@ var n; //??????
 n = 666;
 console.info(n);
 var s;
+// console.info('s:null |number ?????',s) ??????s??
 s = 888;
 s = null;
 // s=undefined ??
@@ -41,4 +46,6 @@ function run() {
 }
 run();
 var b;
-b = (function () { throw new Error('that an error'); })();
+// b=(()=>{throw new Error('that an error')})()
+var func = function () { return console.info('export successfully'); };
+exports.func = func;
