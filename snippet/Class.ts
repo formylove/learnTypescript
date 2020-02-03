@@ -1,4 +1,4 @@
-function Person(name:string,age:number) {//实际是个
+function Person(name:string,age:number) {//实际是个构造函数
     this.age = age;
     this.name = name;
     this.run = () => {
@@ -7,9 +7,9 @@ function Person(name:string,age:number) {//实际是个
     return this;
 
 }
+var person = new Person('Freud', 222)
 Person.prototype.work = () => console.log('sleep and fuck');
 
-var person = new Person('Freud', 222)
 person.work()
 
 //静态方法
