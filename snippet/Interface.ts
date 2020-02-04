@@ -1,55 +1,13 @@
-function printProp(label: { name: string, age: number }) {
-    console.log(label)
+interface Person {
+    name: string;
+    age: number;
 }
 
+let tom: Person = {
+    name: 'Tom',
+    age: 111
+};
 
-
-printProp({ name: 'fang', age: 2222 })
-
-
-interface Database {
-    url: string;
-    table?: string;
-    // db: string='merlin'; 接口不可初始化
-    port: number;
-}
-
-function connnect(db: Database) {
-
-    console.log(db);
-
-
-}
-//只能包含url/port
-connnect({ url: 'mysql:123.3.3.9', port: 3306 })
-var db = { url: 'mysql:123.3.3.9', port: 3306, user: 'admin' }
-connnect(db)
-
-
-interface Encrypt {
-    (key: string, value: string): string;
-}
-
-var md5: Encrypt = (key, value) => key + value;
-
-console.log(md5('今夜月色很美', '我爱你'));
-
-//可约束数组
-interface Arr {
-    [index: number]: string
-}
-var a: Arr = ['e', 'e2']
-console.log(a[1]);
-
-
-//可约束对象，对象所有的值只能说string
-interface Obj {
-    [index: string]: string
-}
-
-var obj: Obj = { name: 'cn' }
-
-console.log(obj['name']);
 
 //对类进行约束
 
@@ -109,11 +67,3 @@ function retrieveHabit<A extends Animal>(animal: A): string {
 }
 console.log('pongo\'s ', retrieveHabit<Pongo>(pongo));
 
-interface EncryptGeneral<T> {
-    <T>(key: T, value: T): T;
-}
-
-function getEncryption<T> (key: T, value: T): T { return key  }
-
-var sha1: EncryptGeneral<string> = getEncryption;
-console.log(sha1('今夜月色很美',''));
