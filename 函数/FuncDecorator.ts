@@ -1,4 +1,4 @@
-import { func } from "./Type";
+import { func } from "../类型/Type";
 
 class Animal2 {
     species: string = 'bowerBird'

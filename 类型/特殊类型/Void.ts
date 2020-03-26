@@ -9,3 +9,4 @@ let num: number = u;
 
 let u: void;
 let num: number = u;
+
